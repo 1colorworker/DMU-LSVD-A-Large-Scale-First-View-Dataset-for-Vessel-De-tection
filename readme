@@ -1,1 +1,92 @@
-Following the publication of our paper, we shall make our dataset available.
+# MASS-LSVD: A Large-Scale First-View Dataset for Marine-Vessel Detection / 大规模第一视角海上船舶检测数据集
+
+🌊 **First-view | Large-scale | Multi-scene | High-resolution (1K) | Multimodal (RGB + IR in future)**  
+🌊 **第一视角 | 大规模 | 多场景 | 1K高分辨率 | 多模态（可见光+红外，未来扩展）**
+
+
+
+---
+
+## Introduction / 简介
+
+**English:** MASS-LSVD (Maritime Autonomous Surface Ship – Large Scale Vessel Detection) is the **first large-scale ship detection dataset captured entirely from a vessel's first-person perspective**. It fills the critical gap of shipborne visible-light samples in maritime perception research.
+
+**中文：** MASS-LSVD 是目前**首个完全从船舶第一视角采集的大规模船舶检测数据集**，填补了船载可见光数据在海上感知研究中的空白。
+
+**English:** The dataset was recorded aboard the **"Xinhongzhuan"** – the world's first intelligent research, teaching and training ship operated by Dalian Maritime University (China). Over 4,000 hours of navigation videos were collected in the Bohai Sea and other sea areas, covering diverse conditions: different times of day (daytime, dusk, night), weather types (sunny, overcast, fog, rain), and navigation phases (port entry/exit, offshore, deep-sea).
+
+**中文：** 数据采集自大连海事大学的全球首艘智能研究与实训两用船 **“新红专”号**。项目收集了超过 4000 小时的渤海及其他海域航行视频，覆盖多种光照（白天、黄昏、夜晚）、天气（晴、阴、雾、雨）以及航行阶段（进出港、近海、远洋）。
+
+---
+
+## Key Features / 主要特点
+
+| English | 中文 |
+|---------|------|
+| ✅ First-person view – mimics visual perception of navigating vessels | ✅ 第一视角 – 模拟船舶驾驶员的视觉感知 |
+| ✅ Large scale – 64,263 high-quality 1K-resolution images | ✅ 大规模 – 64,263 张 1K 分辨率高清图像 |
+| ✅ Rich annotations – 186,742 manually labeled bounding boxes (COCO format) | ✅ 精确标注 – 186,742 个手工标注的边界框（COCO 格式） |
+| ✅ Five ship categories – Fishing Boat, Bulk Carrier, Cruise Ship, Container, Other Ship | ✅ 五类船型 – 渔船、散货船、邮轮、集装箱船、其他船 |
+| ✅ Challenging scenarios – low light, sea reflection, occlusion, extreme weather, complex port backgrounds | ✅ 挑战场景 – 低光照、海面反光、遮挡、极端天气、复杂港口背景 |
+| ✅ Multimodal ready – synchronized infrared images available (for future multimodal fusion) | ✅ 多模态扩展 – 同步采集红外图像（未来可支持多模态融合） |
+
+---
+
+## Dataset Statistics / 数据统计
+
+| Category (英文) | 类别 (中文) | Number of Bounding Boxes | 标注框数量 | Percentage | 占比 |
+|----------------|------------|--------------------------|------------|------------|------|
+| Fishing Boat    | 渔船       | 38,944                   | 38,944     | 20.85%     | 20.85% |
+| Bulk Carrier    | 散货船     | 56,247                   | 56,247     | 30.11%     | 30.11% |
+| Cruise Ship     | 邮轮       | 33,870                   | 33,870     | 18.13%     | 18.13% |
+| Container       | 集装箱船   | 42,309                   | 42,309     | 22.65%     | 22.65% |
+| Other Ship      | 其他船     | 15,372                   | 15,372     | 8.23%      | 8.23% |
+| **Total / 总计** | **总计**   | **186,742**              | **186,742** | **100%**   | **100%** |
+
+---
+
+## Benchmark Performance / 基准测试性能（mAP@0.5）
+
+| Model | mAP | FPS (A40) | 中文模型名 | mAP | FPS |
+|-------|-----|-----------|------------|-----|-----|
+| YOLOv12 | **0.889** | 80 | YOLOv12 | **0.889** | 80 |
+| YOLOv10 | 0.871 | 77 | YOLOv10 | 0.871 | 77 |
+| YOLOv11 | 0.873 | 49 | YOLOv11 | 0.873 | 49 |
+| YOLOv8 | 0.867 | 63 | YOLOv8 | 0.867 | 63 |
+| YOLOv5 | 0.861 | 47 | YOLOv5 | 0.861 | 47 |
+| RT-DETR | 0.834 | 42 | RT-DETR | 0.834 | 42 |
+
+**English:** YOLOv12 achieves the best overall performance. Our experiments also show excellent cross-dataset generalization when training on MASS-LSVD.  
+**中文：** YOLOv12 取得最佳整体性能。跨数据集实验表明，使用 MASS-LSVD 训练的模型具有良好的泛化能力。
+
+---
+
+## Dataset Access / 数据集获取--部分 A Part
+
+**English:** Download the dataset from the GitHub repository:  
+**中文：** 数据集下载地址：Please send e-mail to :yunsheng@dlmu.edu.cn
+
+📦 [https://github.com/lcolorworker/MASS-LSVD-A-Large-Scale-First-View-Dataset-for-VesselDetection](https://github.com/lcolorworker/MASS-LSVD-A-Large-Scale-First-View-Dataset-for-VesselDetection)
+
+**English:** The dataset includes all images, annotation files (COCO format), and a train/test split (8:2).  
+**中文：** 数据集中包含全部图像、COCO 格式标注文件以及 8:2 训练/测试划分。
+
+---
+
+## Citation / 引用
+
+**English:** If you use MASS-LSVD in your research, please cite the following paper:  
+**中文：** 如果你在研究中使用了 MASS-LSVD 数据集，请引用以下论文：
+
+```bibtex
+@article{Fan2025MASS,
+  author    = {Yunsheng Fan and Dongjie Ju and Bing Han and Feng Sun and Liran Shen and Zongjiang Gao and Dongdong Mu and Longhui Niu},
+  title     = {MASS-LSVD: A Large-Scale First-View Dataset for Marine Vessel Detection},
+  journal   = {Journal of Marine Science and Engineering},
+  volume    = {13},
+  number    = {11},
+  pages     = {2201},
+  year      = {2025},
+  doi       = {10.3390/jmse13112201},
+  url       = {https://doi.org/10.3390/jmse13112201}
+}
